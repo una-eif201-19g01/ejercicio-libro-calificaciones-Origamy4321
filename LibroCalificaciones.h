@@ -12,13 +12,36 @@
  *
  * =====================================================================================
  */
+#include <cstdint>
+#include <string>
 
+using namespace std;
 
 #ifndef LIBROCALIFICACIONES_LIBROCALIFICACIONES_H
 #define LIBROCALIFICACIONES_LIBROCALIFICACIONES_H
 
 
 class LibroCalificaciones {
+
+    float monto;
+
+    int CalcularTiempoEnMeses(std::string tiempoTXT);
+
+    float obtenerPorcentaje(std::string porcentajeTXT);
+
+    float calcularInteresMensual(float balance, float tasaAnual);
+
+public:
+    LibroCalificaciones(); //Constructor Default
+
+
+    LibroCalificaciones(float monto);
+
+    float getMonto() const;
+
+    void setMonto(float monto);
+
+    string reportCalculoPrestamos(std::string tiempoTXT, std::string porcentajeTXT);
 
 };
 
